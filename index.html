@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Gardenia Hotel | Khách Sạn Xanh Bền Vững</title>
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+    <script src="https://unpkg.com/grapesjs"></script>
+    <style>
+        body, html { margin: 0; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        #gjs { border: 3px solid #556b2f; } /* Màu xanh Olive sang chảnh */
+        .gjs-cv-canvas { top: 0; width: 100%; height: 100%; }
+        /* Tùy chỉnh màu sắc trình điều khiển cho Diva */
+        .gjs-one-bg { background-color: #2c3e50; }
+        .gjs-four-color { color: #808000; }
+    </style>
+</head>
+<body>
+
+    <div id="gjs">
+        <header style="padding: 20px; background: #fafafa; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 24px; font-weight: bold; color: #556b2f;">OLIVE GARDENIA 🌿</div>
+            <nav>
+                <a href="#about" style="margin: 0 15px; text-decoration: none; color: #333;">Câu chuyện</a>
+                <a href="#rooms" style="margin: 0 15px; text-decoration: none; color: #333;">Phòng nghỉ</a>
+                <a href="#services" style="margin: 0 15px; text-decoration: none; color: #333;">Dịch vụ</a>
+                <a href="#contact" style="margin: 0 15px; text-decoration: none; color: #333;">Liên hệ</a>
+            </nav>
+        </header>
+
+        <section id="hero" style="background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80') center/cover; height: 500px; display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
+            <div style="background: rgba(0,0,0,0.4); padding: 40px; border-radius: 15px;">
+                <h1 style="font-size: 48px;">Trải Nghiệm Nghỉ Dưỡng Xanh</h1>
+                <p style="font-size: 20px;">Nơi tâm hồn hòa mình cùng thiên nhiên bền vững.</p>
+                <button style="padding: 15px 30px; background: #808000; color: white; border: none; cursor: pointer; font-size: 18px; border-radius: 5px;">ĐẶT PHÒNG NGAY</button>
+            </div>
+        </section>
+
+        <section id="services" style="padding: 50px; text-align: center; background: #f9fdf4;">
+            <h2 style="color: #556b2f;">Dịch Vụ Đặc Biệt & Đặt Món</h2>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div style="width: 300px; padding: 20px; border: 1px solid #ddd; margin: 10px; background: white;">
+                    <h3>Thực Đơn Organic</h3>
+                    <p>Món ăn từ vườn rau sạch của khách sạn.</p>
+                    <button style="color: #808000; border: 1px solid #808000; background: none; padding: 5px 10px;">Xem Menu & Đặt món</button>
+                </div>
+                <div style="width: 300px; padding: 20px; border: 1px solid #ddd; margin: 10px; background: white;">
+                    <h3>Spa Thảo Mộc</h3>
+                    <p>Trị liệu hoàn toàn bằng nguyên liệu tự nhiên.</p>
+                    <button style="color: #808000; border: 1px solid #808000; background: none; padding: 5px 10px;">Đặt lịch ngay</button>
+                </div>
+            </div>
+        </section>
+
+        <div style="position: fixed; bottom: 20px; right: 20px; background: #808000; color: white; padding: 15px; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+            💬 Trò chuyện với Olive
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const editor = grapesjs.init({
+            container: '#gjs',
+            fromElement: true,
+            height: '100vh',
+            width: 'auto',
+            storageManager: { type: 'local' },
+            blockManager: {
+                blocks: [
+                    {
+                        id: 'room-card',
+                        label: '<b>Thẻ Phòng</b>',
+                        content: `<div style="padding: 20px; border: 1px solid #ccc; text-align: center;">
+                                    <img src="https://via.placeholder.com/250x150" style="width:100%"/>
+                                    <h4>Phòng Deluxe Xanh</h4>
+                                    <p>Số lượng: 10 phòng - Giá: 1.200.000đ</p>
+                                    <button style="background: #808000; color: white; border: none; padding: 10px;">Chọn phòng</button>
+                                  </div>`,
+                    },
+                    {
+                        id: 'faq',
+                        label: '<b>FAQ Section</b>',
+                        content: `<div style="padding: 20px; background: #eee;">
+                                    <details><summary>Khách sạn có dùng nhựa dùng một lần không?</summary>Dạ hoàn toàn không bà ơi, tụi tui dùng tre và gỗ nha!</details>
+                                  </div>`,
+                    },
+                    {
+                        id: 'social-icons',
+                        label: '<b>Mạng Xã Hội</b>',
+                        content: `<div style="text-align: center; padding: 20px;">
+                                    <span>FB | IG | TikTok</span>
+                                  </div>`,
+                    }
+                ]
+            }
+        });
+
+        // Câu lệnh thông báo lưu trữ cho Queen
+        editor.on('storage:store', () => {
+            console.log('Thiết kế Olive Gardenia đã được lưu tự động! 💜💅');
+        });
+    </script>
+</body>
+</html>
